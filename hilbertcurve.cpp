@@ -16,7 +16,9 @@ hilbertcurve::hilbertcurve(int N)
 	temp_table.x = temp_table.y = 0;
 }
 
-//创建表格
+/**
+* @brief 创建表格
+*/
 void hilbertcurve::createtable()
 {
 	POINT begin;
@@ -25,7 +27,10 @@ void hilbertcurve::createtable()
 	table.push_back(begin);
 }
 
-//移动一步，并记录至vector<POINT> table
+/**
+* @brief 移动一步，并记录至vector<POINT> table
+* @param direction 方向
+*/
 void hilbertcurve::move(int direction)
 {
 	switch (direction)
@@ -47,7 +52,12 @@ void hilbertcurve::move(int direction)
 	tmp++;
 }
 
-//递归实现
+/**
+* @brief 递归实现
+* @param level 维度
+* @param direction 方向
+* @note 四个格子，按上一级方向确定
+*/
 void hilbertcurve::make_hilbertcurve(int level, int direction)
 {
 	if (level == 1)

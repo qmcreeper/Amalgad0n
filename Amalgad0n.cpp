@@ -5,15 +5,19 @@
 
 #include <iostream>
 #include "hilbertcurve.h"
+#include "pid.h"
 
 using namespace std;
 
 int main()
 {
-    hilbertcurve opt1(2);
-    cout << "N of hilbertcurve: " << opt1.N << "\n";
+    /*hilbertcurve opt1(2);
+    cout << "n of hilbertcurve: " << opt1.n << "\n";
     cout << "size: " << opt1.n << "\n";
-    opt1.run();
+    opt1.run();*/
+
+    pid ctr(100,200,0.2,0.015,0.2,1);
+    ctr.pidrun();
 
     getchar();
 }
